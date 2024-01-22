@@ -1,0 +1,31 @@
+<!-- src/app/components/user/user.component.html -->
+<div *ngIf="userData">
+  <img [src]="userData.avatar_url" alt="Profile Picture" />
+  <h2>{{ userData.name }}</h2>
+  <p>{{ userData.bio }}</p>
+  <!-- Display other user details as needed -->
+
+  <div *ngIf="languageStats">
+    <h3>Language Stats</h3>
+    <!-- Display language stats -->
+  </div>
+
+  <div *ngIf="repositories.length > 0">
+    <h3>Repositories</h3>
+    <ul>
+      <li *ngFor="let repo of repositories">
+        <span>{{ repo.name }}</span>
+        <button (click)="handleButtonClick(repo)">View Details</button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="userActivities">
+    <h3>User Activities</h3>
+    <!-- Display user activities -->
+  </div>
+</div>
+
+<div *ngIf="error">
+  <p>{{ error }}</p>
+</div>

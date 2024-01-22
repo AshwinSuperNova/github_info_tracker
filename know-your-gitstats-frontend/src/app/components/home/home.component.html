@@ -1,0 +1,6 @@
+<!-- src/app/components/home/home.component.html -->
+<form (ngSubmit)="onSubmit()">
+  <label for="username">Enter GitHub Username:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="username" required>
+  <button type="submit">Submit</button>
+</form>
